@@ -1,3 +1,7 @@
+html * {
+    font-family: 'Times New Roman', Times, serif;
+  }
+
 .navbar{
     background-color: #44596a;
     overflow: hidden;
@@ -11,3 +15,66 @@
     text-decoration: none;
     padding: 14px 16px;
 }
+
+input[type=text]{
+    width:30%;
+    padding: 12px 24px;
+    margin: 8px 0;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+input[type=submit]{
+    background-color: rgba(23, 101, 219, 0.667);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover{
+    background-color: rgba(16, 68, 146, 0.667) ;
+}
+
+.pharmacy-table {
+    border: 1px solid;
+    border-radius: 5px;
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+    max-width: calc(100%-2em);
+    margin: 1em auto;
+    overflow: hidden;
+    width: 65%;
+}
+
+.table-header {
+    background-color: #9abcd7 ;
+    color: white;
+    font-size: 1.5em;
+    padding: 1rem;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+}
+
+td {
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+tr:nth-child(odd) { 
+    width: 100%;
+    background-color:white;
+}
+
+tr:nth-child(even) { 
+    width: 100%;
+    background-color: #e2f2fa;
+}  
+
