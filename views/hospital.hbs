@@ -1,5 +1,5 @@
 <!-- hospital.hbs -->
-<form id="search-provider" >
+<form id="search-hospital" >
     <div class = 'ui-widget'>
     <label for="inputCity"> Enter city </label>
     <input type="text" id="inputCity" name="inputCity"> 
@@ -7,20 +7,20 @@
     <select id="distances">
         <option value="0"> within city</option>
         <option value="15"> 15 miles</option>
-        <option value="25"> 25 miles</option>
-        <option value="35"> 35 miles</option>
+        <option value="35"> 30 miles</option>
         <option value="50"> 50 miles</option>
+        <option value="200"> Any Distance</option>
     </select>
     <input type='submit' id="bnt" value="Search">
     </div>
 </form>
 
 <h3 id="count-here"></h3>
-<div id="table-here" class="provider-table"hidden></div>
+<div id="table-here" class="hospital-table"hidden></div>
 <script id="resultTemplate" type="text/x-handlebars-template">
     <table>
         <thead>
-                <div class="table-header">Providers</div>
+                <div class="table-header">Hospital</div>
         </thead>
         <tbody>
             \{{#each data}}
@@ -30,6 +30,7 @@
                     \{{addr}}<br>
                     \{{city}} \{{st}} \{{zip}}<br>
                     \{{phone}}<br>
+                    \{{dist}} miles<br>
                     </td>
                 </tr>
             \{{/each}}
@@ -38,8 +39,9 @@
 </script>
 
 <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+<script src= "https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src= "https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
 <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-<script src="./js/hospital.js"></script>
+<script src= "./js/hospital.js"></script>
+<script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDrU2YygH3Sb8xqEtVLPBhpQMqQO7CnhqI&callback=Function.prototype&v=beta" async defer></script>

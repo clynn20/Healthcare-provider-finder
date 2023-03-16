@@ -6,9 +6,10 @@
     <label for="distance-dropdown"> Distance(optional) </label>
     <select id="distances">
         <option value="0"> within city</option>
-        <option value="15"> 15 miles</option>
-        <option value="25"> 25 miles</option>
-        <option value="35"> 35 miles</option>
+        <option value="10"> 15 miles</option>
+        <option value="20"> 25 miles</option>
+        <option value="50"> 50 miles</option>
+        <option value="65"> 65 miles</option>
     </select>
     <input type='submit' id="bnt" value="Search">
     </div>
@@ -28,7 +29,8 @@
                     <strong>\{{pharName}}<br></strong>
                     \{{addr}}<br>
                     \{{city}} \{{st}} \{{zip}}<br>
-                    \{{tel}}<br>
+                    \{{tel}} <br>
+                    \{{dist}} miles <br>
                     </td>
 
                 </tr>
@@ -42,7 +44,7 @@
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
 <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-<script src = "./js/pharbundle.js"></script>
+<script src = "./js/pharmacy.js"></script>
 <script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDrU2YygH3Sb8xqEtVLPBhpQMqQO7CnhqI&callback=Function.prototype&v=beta" async defer></script>
 
 

@@ -4,7 +4,7 @@ $(document).ready(function(){
         source: function(req,res){
             // send request to server side
             $.ajax({
-                url: 'pharmacy',
+                url: 'hospital',
                 type: 'POST',
                 dataType: 'JSON',
                 data:{
@@ -52,24 +52,23 @@ $(document).ready(function(){
         }
         // send request to server side
         $.ajax({
-            url: 'pharmacy',
+            url: 'hospital',
             type: 'POST',
             dataType: 'JSON',
             data: obj,
             // successful get response from server
             success: function(result){
 
-               addKey(result);
-               getDist(result, cityNameVal,distanceVal);
-                
+                addKey(result);
+                getDist(result, cityNameVal,distanceVal);
+
             },
             error: function(result){
                 console.log(result)
             }
-        });
+        })
     })
 });
-
 
 function addKey(data){
     for(var i=0; i<data.length; i++){
@@ -96,7 +95,7 @@ async function getDist(data, ori, distval){
     
     var list = [];
     if(distval==0 && data.length > 0){
-        $('#count-here').html("Found "+ data.length + " in-network pharmacies.");
+        $('#count-here').html("Found "+ data.length + " in-network hospitals.");
         $('#table-here').removeAttr('hidden');
         var source = $('#resultTemplate').html();
         var template = Handlebars.compile(source); 
@@ -112,7 +111,7 @@ async function getDist(data, ori, distval){
                 break;
             }
         }
-        $('#count-here').html("Found "+ list.length + " in-network pharmacies.");
+        $('#count-here').html("Found "+ list.length + " in-network hospitals.");
         $('#table-here').removeAttr('hidden');
         var source = $('#resultTemplate').html();
         var template = Handlebars.compile(source); 
@@ -121,9 +120,8 @@ async function getDist(data, ori, distval){
     }
     // no matched result
     else if(data.length==0){
-        $('#count-here').html("Found "+ data.length + " in-network pharmacies.");
+        $('#count-here').html("Found "+ data.length + " in-network hospitals.");
         $('#table-here').attr('hidden',true);
     }
 
 };
-
