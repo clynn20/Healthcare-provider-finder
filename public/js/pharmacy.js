@@ -1,3 +1,5 @@
+var Mutex = require('async-mutex').Mutex;
+const mutex = new Mutex();
 $(document).ready(function(){
     // handle autocomplete when user input city name 
     $('#inputCity').autocomplete({
@@ -52,14 +54,19 @@ $(document).ready(function(){
         }
         // send request to server side
         $.ajax({
-            url: '/pharmacy',
+            url: 'pharmacy',
             type: 'POST',
             dataType: 'JSON',
             data: obj,
             // successful get response from server
-            success:function(result){
-                //console.log("success")
-                //console.log(result)
+            success: function(result){
+                console.log("success")
+                console.log(result)
+                console.log("------------------------------------")
+                addKey(result);
+                getDist(result,cityNameVal);
+                printArray(result);
+
                 // find the matched result 
                 if(result.length>0){
                     $('#count-here').html("Found "+ result.length + " in-network pharmacies.");
@@ -81,3 +88,48 @@ $(document).ready(function(){
         })
     })
 });
+
+
+function addKey(data){
+    for(var i=0; i<data.length; i++){
+        data[i].dist = 0;
+    }
+};
+
+function printArray(data){
+    for(var i=0; i<data.length; i++){
+        console.log(data[i]);
+    }
+};
+
+
+async function getDist(data, ori){
+    for(var i=0; i<data.length; i++){
+            const release = await mutex.acquire();
+            try{
+                var service = new google.maps.DistanceMatrixService();
+                service.getDistanceMatrix({
+                    origins: [ori],
+                    destinations: [data[i].addr + ', ' + data[i].city + ', ' + data[i].st],
+                    travelMode: google.maps.TravelMode.DRIVING,
+                    unitSystem: google.maps.UnitSystem.IMPERIAL
+                },calcDist);
+
+            }
+            finally{
+                release();
+            }
+    }
+};
+
+
+async function calcDist(response, status){
+    if(status != google.maps.DistanceMatrixStatus.OK){
+        console.log(status)
+    }
+    else if(status == google.maps.DistanceMatrixStatus.OK){
+        
+        console.log("----------------------")
+        console.log(response);
+    }
+}

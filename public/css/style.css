@@ -2,8 +2,16 @@ html * {
     font-family: 'Times New Roman', Times, serif;
   }
 
+h1 {
+    background-image: url('orange.jpg');
+    background-position: center;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .navbar{
-    background-color: #44596a;
+    background-color: black;
     overflow: hidden;
 }
 
@@ -49,7 +57,24 @@ input[type=submit]:hover{
     overflow: hidden;
     width: 65%;
 }
-
+.doctors-table {
+    border: 1px solid;
+    border-radius: 5px;
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+    max-width: calc(100%-2em);
+    margin: 1em auto;
+    overflow: hidden;
+    width: 65%;
+}
+.hospitals-table {
+    border: 1px solid;
+    border-radius: 5px;
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+    max-width: calc(100%-2em);
+    margin: 1em auto;
+    overflow: hidden;
+    width: 65%;
+}
 .table-header {
     background-color: #9abcd7 ;
     color: white;
