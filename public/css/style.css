@@ -78,3 +78,7 @@ tr:nth-child(even) {
     background-color: #e2f2fa;
 }  
 
+#map {
+    height: 100px;
+    width: 100px;
+}
