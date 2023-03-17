@@ -79,6 +79,7 @@ function addKey(data){
 
 async function getDist(data, ori, distval){
     $('#count-here').html("Loading the data...");
+    $('#table-here').attr('hidden',true);
     for(var i=0; i<data.length; i++){
         var service = new google.maps.DistanceMatrixService();
         var awesomePromise = service.getDistanceMatrix({
