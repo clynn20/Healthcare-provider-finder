@@ -58,10 +58,8 @@ $(document).ready(function(){
             data: obj,
             // successful get response from server
             success: function(result){
-
                addKey(result);
                getDist(result, cityNameVal,distanceVal);
-                
             },
             error: function(result){
                 console.log(result)
@@ -79,6 +77,7 @@ function addKey(data){
 
 
 async function getDist(data, ori, distval){
+    $('#count-here').html("Loading the data...");
     for(var i=0; i<data.length; i++){
         var service = new google.maps.DistanceMatrixService();
         var awesomePromise = service.getDistanceMatrix({
