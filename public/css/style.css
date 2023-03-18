@@ -1,40 +1,55 @@
 html * {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Comfortaa';
   }
 
 h1 {
-    background-image: url('orange.jpg');
-    background-position: center;
-    background-position: bottom;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: #4285f4ff;
+    color: white;
+    font-weight: Normal;
+    margin: 0;
+    height: 80px;
+    position: relative;
+}
+h1>span {
+    position: absolute;
+    bottom:5px;
+    left:5px;
 }
 
 .navbar{
-    background-color: black;
-    overflow: hidden;
+    background-color: #6c808bff;
+    display: flex;
+    justify-content: space-around;
+    width: 700px;
 }
 
 .navbar a{
-    float:left;
-    color: #f2f2f2;
+    color: white;
     text-align:center;
-    font-size: 18px;
     text-decoration: none;
-    padding: 14px 16px;
+    width: 100%;
+    border-top: solid;
+    padding: 15px;
+    border-right: solid;
+    border-bottom: solid;
 }
 
 input[type=text]{
-    width:30%;
+    border: none;
+    width:100%;
     padding: 12px 24px;
     margin: 8px 0;
     border-radius: 5px;
     box-sizing: border-box;
+    margin-right: 5px;
 }
 
+.sub {
+    display: flex;
+}
 
 input[type=submit]{
-    background-color: rgba(23, 101, 219, 0.667);
+    background-color: #6c808bff;
     border: none;
     border-radius: 5px;
     color: white;
@@ -42,10 +57,12 @@ input[type=submit]{
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
+    width: 150px;
+    margin-left: auto;
 }
 
 input[type=submit]:hover{
-    background-color: rgba(16, 68, 146, 0.667) ;
+    background-color: #3c484dff ;
 }
 
 .pharmacy-table {
@@ -93,17 +110,40 @@ td {
     vertical-align: middle;
 }
 
-tr:nth-child(odd) { 
-    width: 100%;
-    background-color:white;
+tr {
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 0 0 8px #888888;
+    margin: 10px;
+    padding: 10px;
+    border: solid;
 }
-
-tr:nth-child(even) { 
-    width: 100%;
-    background-color: #e2f2fa;
-}  
 
 #map {
     height: 100px;
     width: 100px;
+}
+
+form {
+    color: white;
+    background-color: #4285f4ff;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin-top: 50px;
+}
+
+.enter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.enterCity {
+    width: 120px;
+}
+
+label {
+    padding-left: 5px;
 }

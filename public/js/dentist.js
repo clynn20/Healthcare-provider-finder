@@ -4,7 +4,7 @@ $(document).ready(function () {
         source: function (req, res) {
             // send request to server side
             $.ajax({
-                url: 'doctor',
+                url: 'dentist',
                 type: 'POST',
                 dataType: 'JSON',
                 data: {
@@ -52,7 +52,7 @@ $(document).ready(function () {
         }
         // send request to server side
         $.ajax({
-            url: '/doctor',
+            url: '/dentist',
             type: 'POST',
             dataType: 'JSON',
             data: obj,
@@ -62,7 +62,7 @@ $(document).ready(function () {
                 //console.log(result)
                 // find the matched result 
                 if (result.length > 0) {
-                    $('#count-here').html("Found " + result.length + " in-network doctor.");
+                    $('#count-here').html("Found " + result.length + " in-network dentist.");
                     $('#table-here').removeAttr('hidden');
                     var source = $('#resultTemplate').html();
                     var template = Handlebars.compile(source);
@@ -71,7 +71,7 @@ $(document).ready(function () {
                 }
                 // no matched result
                 else if (result.length == 0) {
-                    $('#count-here').html("Found " + result.length + " in-network doctor.");
+                    $('#count-here').html("Found " + result.length + " in-network dentist.");
                     $('#table-here').attr('hidden', true);
                 }
             },

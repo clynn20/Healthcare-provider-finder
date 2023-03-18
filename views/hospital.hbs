@@ -1,18 +1,23 @@
 <!-- hospital.hbs -->
 <form id="search-hospital" >
-    <div class = 'ui-widget'>
-    <label for="inputCity"> Enter city </label>
-    <input type="text" id="inputCity" name="inputCity"> 
-    <label for="distance-dropdown"> Distance(optional) </label>
-    <select id="distances">
-        <option value="0"> within city</option>
-        <option value="15"> 15 miles</option>
-        <option value="35"> 35 miles</option>
-        <option value="50"> 50 miles</option>
-        <option value="200"> Any Distance</option>
-    </select>
-    <input type='submit' id="bnt" value="Search">
+
+    <div class="enter">   <label for="inputCity" class="enterCity"> Enter city: </label>
+            <input type="text" id="inputCity" name="inputCity">
     </div>
+    <div>
+        <label for="distance-dropdown"> Distance (optional) </label>
+        <select id="distances">
+            <option value="0"> within city</option>
+            <option value="15"> 15 miles</option>
+            <option value="35"> 35 miles</option>
+            <option value="50"> 50 miles</option>
+            <option value="200"> Any Distance</option>
+        </select>
+    </div>
+    <div class="sub">
+        <input type='submit' id="bnt" value="Search">
+    </div>
+
 </form>
 
 <h3 id="count-here"></h3>
@@ -20,7 +25,7 @@
 <script id="resultTemplate" type="text/x-handlebars-template">
     <table>
         <thead>
-                <div class="table-header">Hospital</div>
+                <div class="table-header">Hospitals</div>
         </thead>
         <tbody>
             \{{#each data}}
