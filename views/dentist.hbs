@@ -1,10 +1,12 @@
 <!-- dentist.hbs -->
 <main>
 <form id="search-dentist" >
-    <div class = 'ui-widget'>
-    <label for="inputCity"> Enter city </label>
+    <div class = 'enter'>
+    <label for="inputCity" class="enterCity"> Enter city </label>
     <input type="text" id="inputCity" name="inputCity"> 
-    <label for="distance-dropdown"> Distance(optional) </label>
+    </div>
+    <div>
+    <label for="distance-dropdown"> Distance (optional) </label>
     <select id="distances">
         <option value="0"> within city</option>
         <option value="15"> 15 miles</option>
@@ -13,7 +15,9 @@
 	  <option value="45"> 45 miles</option>
 	  <option value="55"> 55 miles</option>
     </select>
-    <input type='submit' id="bnt" value="Search">
+    </div>
+    <div class="sub">
+        <input type='submit' id="bnt" value="Search">
     </div>
 </form>
 
