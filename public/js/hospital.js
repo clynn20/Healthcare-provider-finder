@@ -92,7 +92,7 @@ async function getDist(data, ori, distval){
         data[i].dist = Number(res.rows[0].elements[0].distance.text.split(' ')[0]);
     }
     data.sort((a,b) => a.dist - b.dist);
-    console.log(data);
+    //console.log(data);
     
     
     var list = [];

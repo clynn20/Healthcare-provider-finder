@@ -39,6 +39,7 @@ $(document).ready(function(){
         event.preventDefault();
         var cityNameVal = $('#inputCity').val();
         var distanceVal = $('#distances').val();
+        var typeVal = $('#type').val();
     
         if(cityNameVal==''){
             alert('Please provide a city name!')
@@ -48,18 +49,20 @@ $(document).ready(function(){
         var obj = {
             city: cityNameVal,
             act: "Cityinput",
-            dist: distanceVal
+            dist: distanceVal,
+            type: typeVal
         }
         // send request to server side
         $.ajax({
-            url: 'pharmacy',
+            url: 'alldoctor',
             type: 'POST',
             dataType: 'JSON',
             data: obj,
             // successful get response from server
             success: function(result){
+                //console.log(result);
                addKey(result);
-               getDist(result, cityNameVal,distanceVal);
+               getDist(result, cityNameVal,distanceVal,typeVal);
             },
             error: function(result){
                 console.log(result)
@@ -76,14 +79,29 @@ function addKey(data){
 };
 
 
-async function getDist(data, ori, distval){
+async function getDist(data, ori, distVal, typeVal){
+    var type;
+    switch(Number(typeVal)){
+        case 1:
+            type = "Doctor";
+            break;
+        case 2: 
+            type = "Dentist";
+            break;
+        case 3: 
+            type = "EyeDoctor";
+            break;
+        case 4:
+            type = "Mental";
+            break;
+    };
     $('#count-here').html("Loading the data...");
     $('#table-here').attr('hidden',true);
     for(var i=0; i<data.length; i++){
         var service = new google.maps.DistanceMatrixService();
         var awesomePromise = service.getDistanceMatrix({
             origins: [ori],
-            destinations: [data[i].addr + ', ' + data[i].city + ', ' + data[i].st],
+            destinations: [data[i].Address + ', ' + data[i].City + ', ' + data[i].State],
             travelMode: google.maps.TravelMode.DRIVING,
             unitSystem: google.maps.UnitSystem.IMPERIAL
         });
@@ -93,26 +111,25 @@ async function getDist(data, ori, distval){
     data.sort((a,b) => a.dist - b.dist);
     //console.log(data);
     
-    
     var list = [];
-    if(distval==0 && data.length > 0){
-        $('#count-here').html("Found "+ data.length + " in-network pharmacies.");
+    if(distVal==0 && data.length > 0){
+        $('#count-here').html("Found "+ data.length + " in-network " + type +"." );
         $('#table-here').removeAttr('hidden');
         var source = $('#resultTemplate').html();
         var template = Handlebars.compile(source); 
         var html = template({data: data});
         $('#table-here').html(html);
     }
-    else if (distval!=0 && data.length!=0){
+    else if (distVal!=0 && data.length!=0){
         for(var i=0; i<data.length; i++){
-            if(data[i].dist <= distval){
+            if(data[i].dist <= distVal){
                 list.push(data[i]);
             }
-            else if(data[i].dist > distval){
+            else if(data[i].dist > distVal){
                 break;
             }
         }
-        $('#count-here').html("Found "+ list.length + " in-network pharmacies.");
+        $('#count-here').html("Found "+ list.length + " in-network " + type + ".");
         $('#table-here').removeAttr('hidden');
         var source = $('#resultTemplate').html();
         var template = Handlebars.compile(source); 
@@ -121,7 +138,7 @@ async function getDist(data, ori, distval){
     }
     // no matched result
     else if(data.length==0){
-        $('#count-here').html("Found "+ data.length + " in-network pharmacies.");
+        $('#count-here').html("Found "+ data.length + " in-network " + type + ".");
         $('#table-here').attr('hidden',true);
     }
 

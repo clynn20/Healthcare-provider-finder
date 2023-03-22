@@ -1,0 +1,63 @@
+<!-- pharmacy.hbs -->
+<form id="search-pharmacy" >
+    <div class ="enter">
+    <label for="inputCity" class="enterCity"> Enter city </label>
+    <input type="text" id="inputCity" name="inputCity"> 
+    </div>
+    <div>
+    <label for="doctor-type-dropdown"> Specialty </label>
+    <select id="type">
+        <option value="1"> Doctor </option>
+        <option value="2"> Dentist </option>
+        <option value="3"> Ophthalmologist </option>
+        <option value="4"> Therapist </option>
+    </select>
+    </div>
+    <div>
+    <label for="distance-dropdown"> Distance (optional) </label>
+    <select id="distances">
+        <option value="0"> within city</option>
+        <option value="15"> 15 miles</option>
+        <option value="25"> 25 miles</option>
+        <option value="50"> 50 miles</option>
+        <option value="65"> 65 miles</option>
+    </select>
+    </div>
+    <div class="sub">
+        <input type='submit' id="bnt" value="Search">
+    </div>
+</form>
+
+<h3 id="count-here"></h3>
+<div id="table-here" class="Specialty-table"hidden></div>
+<script id="resultTemplate" type="text/x-handlebars-template">
+    <table>
+        <thead>
+                <div class="table-header"> </div>
+        </thead>
+        <tbody>
+              \{{#each data}}
+                <tr>
+                    <td>
+                    <strong>\{{Provider}}<br></strong>
+			  \{{Practice}}<br>
+                    \{{Address}}<br>
+                    \{{City}} \{{State}} \{{Zip}}<br>
+                    \{{Phon}}<br>
+			  \{{AssociatedWith}}<br>
+			  \{{HospitalAffiliations}}<br>
+              \{{dist}} miles <br>
+                    </td>
+                </tr>
+            \{{/each}}
+        </tbody>
+    </table>
+</script>
+
+<link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+<script src = "https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+<script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script src = "./js/alldoctor.js"></script>
+<script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDrU2YygH3Sb8xqEtVLPBhpQMqQO7CnhqI&callback=Function.prototype&v=beta" async defer></script>
