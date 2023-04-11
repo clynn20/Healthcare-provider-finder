@@ -1,0 +1,56 @@
+<!-- therapist.hbs -->
+<main>
+<form id="search-therapist" >
+    <div class = "enter">
+    <label for="inputCity" class="enterCity"> Enter city </label>
+    <input type="text" id="inputCity" name="inputCity"> 
+    </div>
+    <div>
+    <label for="distance-dropdown"> Distance (optional) </label>
+    <select id="distances">
+        <option value="0"> within city</option>
+        <option value="15"> 15 miles</option>
+        <option value="25"> 25 miles</option>
+        <option value="35"> 35 miles</option>
+	  <option value="45"> 45 miles</option>
+	  <option value="55"> 55 miles</option>
+    </select>
+    </div>
+      <div class="sub">
+        <input type='submit' id="bnt" value="Search">
+    </div>
+</form>
+
+<h3 id="count-here"></h3>
+<div id="table-here" class="therapist-table"hidden></div>
+<script id="resultTemplate" type="text/x-handlebars-template">
+    <table>
+        <thead>
+            <div class="table-header">Therapist</div>
+        </thead>
+        <tbody>
+            \{{#each data}}
+                <tr>
+                    <td>
+                    <strong>\{{Primary Care Provider}}<br></strong>
+			  \{{Practice}}<br>
+                    \{{Address}}<br>
+                    \{{City}} \{{State}} \{{Zip Code}}<br>
+                    \{{Phone Number}}<br>
+			  \{{Associated With}}<br>
+			  \{{Hospital Affiliations}}<br>
+                    </td>
+                </tr>
+            \{{/each}}
+        </tbody>
+    </table>
+</script>
+</main>
+
+<link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+<script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script src="./js/therapist.js"></script>
+<script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDrU2YygH3Sb8xqEtVLPBhpQMqQO7CnhqI&callback=Function.prototype&v=beta" async defer></script>

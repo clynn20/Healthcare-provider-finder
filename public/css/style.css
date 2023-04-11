@@ -1,0 +1,149 @@
+html * {
+    font-family: 'Comfortaa';
+  }
+
+h1 {
+    background-color: #4285f4ff;
+    color: white;
+    font-weight: Normal;
+    margin: 0;
+    height: 80px;
+    position: relative;
+}
+h1>span {
+    position: absolute;
+    bottom:5px;
+    left:5px;
+}
+
+.navbar{
+    background-color: #6c808bff;
+    display: flex;
+    justify-content: space-around;
+    width: 700px;
+}
+
+.navbar a{
+    color: white;
+    text-align:center;
+    text-decoration: none;
+    width: 100%;
+    border-top: solid;
+    padding: 15px;
+    border-right: solid;
+    border-bottom: solid;
+}
+
+input[type=text]{
+    border: none;
+    width:100%;
+    padding: 12px 24px;
+    margin: 8px 0;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-right: 5px;
+}
+
+.sub {
+    display: flex;
+}
+
+input[type=submit]{
+    background-color: #6c808bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 150px;
+    margin-left: auto;
+}
+
+input[type=submit]:hover{
+    background-color: #3c484dff ;
+}
+
+.pharmacy-table {
+    border: 1px solid;
+    border-radius: 5px;
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+    max-width: calc(100%-2em);
+    margin: 1em auto;
+    overflow: hidden;
+    width: 65%;
+}
+.doctors-table {
+    border: 1px solid;
+    border-radius: 5px;
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+    max-width: calc(100%-2em);
+    margin: 1em auto;
+    overflow: hidden;
+    width: 65%;
+}
+.hospitals-table {
+    border: 1px solid;
+    border-radius: 5px;
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+    max-width: calc(100%-2em);
+    margin: 1em auto;
+    overflow: hidden;
+    width: 65%;
+}
+.table-header {
+    background-color: #9abcd7 ;
+    color: white;
+    font-size: 1.5em;
+    padding: 1rem;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+}
+
+td {
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+tr {
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 0 0 8px #888888;
+    margin: 10px;
+    padding: 10px;
+    border: solid;
+}
+
+#map {
+    height: 100px;
+    width: 100px;
+}
+
+form {
+    color: white;
+    background-color: #4285f4ff;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin-top: 50px;
+}
+
+.enter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.enterCity {
+    width: 120px;
+}
+
+label {
+    padding-left: 5px;
+}
