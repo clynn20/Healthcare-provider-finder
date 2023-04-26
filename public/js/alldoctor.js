@@ -4,7 +4,7 @@ $(document).ready(function(){
         source: function(req,res){
             // send request to server side
             $.ajax({
-                url: 'pharmacy',
+                url: 'doctor',
                 type: 'POST',
                 dataType: 'JSON',
                 data:{
