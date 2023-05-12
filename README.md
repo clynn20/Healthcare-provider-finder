@@ -1,6 +1,17 @@
 # Healthcare-project
 This project aims to faciliate OSU internatioal student who insure under PacifiSource with Navigator plan to find the healthcare provider near Corvallis.
 
+# Setup environment 
+Please follow the steps in setup guide.pdf to install the required packages and tools to run the project.
+
+# Requriment to access the website
+To access the webiste you need to either have OSU in-campus network connection or VPN to OSU.\
+You can find more information about VPN to OSU throught https://is.oregonstate.edu/td-service/vpn
+
+# External links
+For general information about international student health insurance, please visit\
+https://studenthealth.oregonstate.edu/insurance/international-student-insurance-plan
+
 # How to navigate:
 * Front Page
 ![image](https://user-images.githubusercontent.com/91495658/226815110-f71ba568-be82-4205-a9dc-bd2de4d8ee93.png)
@@ -16,14 +27,6 @@ This project aims to faciliate OSU internatioal student who insure under PacifiS
 * FAQ Page will navigate you to a list of questions that are typically asked when finding an insurance plan that works for the students. Then by clicking on a given question, there will be given an answer or a resource. 
 ![image](https://user-images.githubusercontent.com/91495658/226816067-9b7c79a6-c892-4ee4-a659-f660dc53c629.png)
 ![image](https://user-images.githubusercontent.com/91495658/226816246-199c8319-1580-48f2-8d34-bf6e1ec1c97b.png)
-
-# Requriment to access the website
-To access the webiste you need to either have OSU in-campus network connection or VPN to OSU.\
-You can access the webiste through URL:  http://flip2.engr.oregonstate.edu:9550/
-
-# External links
-For general information about international student health insurance, please visit
-https://studenthealth.oregonstate.edu/insurance/international-student-insurance-plan
 
 # How to contact
 Click Discussions to leave comments or questions you have.
