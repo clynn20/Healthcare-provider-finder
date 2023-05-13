@@ -5,8 +5,8 @@ This project aims to faciliate OSU internatioal student who insure under PacifiS
 Please follow the steps in setup guide.pdf to install the required packages and tools to run the project.
 
 # Requriment to access the website
-To access the webiste you need to either have OSU in-campus network connection or VPN to OSU.\
-You can find more information about VPN to OSU throught https://is.oregonstate.edu/td-service/vpn
+To access the website you need to either have OSU in-campus network connection or VPN to OSU.\
+You can find more information about VPN to OSU threw https://is.oregonstate.edu/td-service/vpn
 
 # External links
 For general information about international student health insurance, please visit\
