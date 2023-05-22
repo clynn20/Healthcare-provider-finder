@@ -2,7 +2,15 @@
 This project aims to faciliate OSU internatioal student who insure under PacifiSource with Navigator plan to find the healthcare provider near Corvallis.
 
 # Setup environment 
-Please follow the steps in setup guide.pdf to install the required packages and tools to run the project.
+Please follow the steps in Setup guide.pdf to install the required packages and tools to run the project.
+
+# Dependencies
+Make sure you installed the dependicies\
+• Node version 16\
+• Express-handlebars\
+• Forever\
+• Hbs\
+• MySQL
 
 # Requriment to access the website
 To access the website you need to either have OSU in-campus network connection or VPN to OSU.\
