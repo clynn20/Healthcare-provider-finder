@@ -1,5 +1,5 @@
 # Healthcare-project
-This project aims to faciliate OSU internatioal student who insure under PacifiSource with Navigator plan to find the healthcare provider near Corvallis. https://docs.google.com/presentation/d/1MwZzbQj415QYHj6UWrQZOZnjIZ8l7Sw8cfdg4x2NBys/edit#slide=id.p
+This project aims to faciliate OSU internatioal student who insure under PacifiSource with Navigator plan to find the healthcare provider near Corvallis. * PowerPoint: https://docs.google.com/presentation/d/1MwZzbQj415QYHj6UWrQZOZnjIZ8l7Sw8cfdg4x2NBys/edit#slide=id.p
 
 # Setup environment 
 Please follow the steps in Setup guide.pdf to install the required packages and tools to run the project.
